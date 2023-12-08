@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-shopping-cart',
-  templateUrl: './signals.component.html',
+  selector: 'app-signals',
+  templateUrl: './signals.component.html'
 })
 export class SignalsComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+
+   }
 
   ngOnInit() {
   }
