@@ -1,23 +1,25 @@
-<div class="card border-secondary">
-  <div class="card-header text-secondary fw-bold">
+<div class="border border-secondary p-4">
+  <div class="text-secondary font-bold">
     {{ pageTitle }}
   </div>
 
-  <div class="card-body">
+  <div class="mt-4">
     <div *ngIf="cartItems().length; else noItems">
-      <div class="row">
-        <div class="col-md-4 fw-bold">Product</div>
-        <div class="col-md-2 fw-bold text-center">Price</div>
-        <div class="col-md-2 fw-bold text-center">Quantity</div>
-        <div class="col-md-2 fw-bold text-center">Extended Price</div>
+      <div class="flex">
+        <div class="w-1/4 font-bold">Product</div>
+        <div class="w-1/6 font-bold text-center">Price</div>
+        <div class="w-1/6 font-bold text-center">Quantity</div>
+        <div class="w-1/6 font-bold text-center">Extended Price</div>
       </div>
 
       <!-- Display the cart items -->
-      <div *ngFor="let item of cartItems()">
+      <div *ngFor="let item of cartItems()" class="mt-2">
         <app-cart-item [cartItem]="item" />
       </div>
     </div>
   </div>
 
-  <ng-template #noItems> No items in cart </ng-template>
+  <ng-template #noItems>
+    <p class="mt-4">No items in cart</p>
+  </ng-template>
 </div>
