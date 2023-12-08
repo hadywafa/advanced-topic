@@ -7,12 +7,14 @@ import { CartTotalComponent } from './components/shopping-cart/cart-total/cart-t
 import { RouterModule, Routes } from '@angular/router';
 import { SignalsComponent } from './signals.component';
 import { HeaderCartComponent } from './components/header-cart/header-cart.component';
+import { FormsModule } from '@angular/forms';
 const routes:Routes  = [{
   path:"",component:SignalsComponent
 }]
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild(routes)
   ],
   declarations: [SignalsComponent,HeaderCartComponent,ShoppingCartComponent,CartItemComponent,CartListComponent,CartTotalComponent]

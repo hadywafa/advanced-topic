@@ -1,14 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from "@angular/core";
+import { CartService } from "../../services/cart.service";
 
 @Component({
-  selector: 'app-header-cart',
-  templateUrl: './header-cart.component.html',
+  selector: "app-header-cart",
+  templateUrl: "./header-cart.component.html",
 })
-export class HeaderCartComponent implements OnInit {
+export class HeaderCartComponent {
+  private cartService = inject(CartService);
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  cartCount = this.cartService.cartCount;
 }

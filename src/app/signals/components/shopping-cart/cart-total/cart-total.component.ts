@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from "@angular/core";
+import { CartService } from "../../../services/cart.service";
 
 @Component({
-  selector: 'app-cart-total',
-  templateUrl: './cart-total.component.html',
+  selector: "app-cart-total",
+  templateUrl: "./cart-total.component.html",
 })
-export class CartTotalComponent implements OnInit {
+export class CartTotalComponent {
+  private cartService = inject(CartService);
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  // Reference the service signals for binding
+  cartItems = this.cartService.cartItems;
+  subTotal = this.cartService.subTotal;
+  deliveryFee = this.cartService.deliveryFee;
+  tax = this.cartService.tax;
+  totalPrice = this.cartService.totalPrice;
 }
