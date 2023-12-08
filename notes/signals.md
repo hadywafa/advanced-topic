@@ -5,7 +5,7 @@
 + It is new way for our code to tell our templates that data changed.
 + important for improved change detection
 
-![Alt text](signals-vs-variables.png)
+![Alt text](../src/assets/images/signals-vs-variables.png)
 
 ## Types of signals
 
