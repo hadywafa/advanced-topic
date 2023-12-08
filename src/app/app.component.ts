@@ -10,7 +10,7 @@ import { CartService } from "./signals/services/cart.service";
   templateUrl: "./app.component.html",
 })
 export class AppComponent {
-  pageTitle = "Acme Product Management";
+  pageTitle = "HW Product Management";
 
   private cartService = inject(CartService);
 

@@ -1,20 +1,30 @@
-<nav class="navbar navbar-expand navbar-light bg-light">
-  <a class="navbar-brand">{{pageTitle}}</a>
-  <ul class="navbar-nav">
+<style>
+  .active {
+    color: blue;
+  }
+</style>
+<nav class="bg-white flex justify-between p-2 shadow-lg">
+  <a class="text-lg font-bold text-gray-800" [routerLink]="['/']">{{ pageTitle }}</a>
+  <ul class="flex space-x-4">
     <li class="nav-item">
-      <a class="nav-link" [routerLink]="['/welcome']" routerLinkActive="active">Home</a>
+      <a class="text-gray-500 hover:text-blue-700" [routerLink]="['/welcome']" routerLinkActive="active">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" [routerLink]="['/products']" routerLinkActive="active">Product List</a>
+      <a class="text-gray-500 hover:text-blue-700" [routerLink]="['/products']" routerLinkActive="active">
+        Product List
+      </a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" [routerLink]="['/cart']" routerLinkActive="active"
-        >Cart
-        <span class="badge bg-primary">{{cartCount() > 0 ? cartCount() : ''}}</span>
+    <li class="nav-item relative">
+      <a class="text-gray-500 hover:text-blue-700" [routerLink]="['/cart']" routerLinkActive="active">
+        Cart
+        <span class="absolute top-0 right-0 bg-primary text-white p-1 rounded-full">
+          {{ cartCount() > 0 ? cartCount() : '' }}
+        </span>
       </a>
     </li>
   </ul>
 </nav>
-<div class="flex">
+
+<div class="flex mt-4">
   <router-outlet></router-outlet>
 </div>
