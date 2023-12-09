@@ -6,18 +6,20 @@
 <nav class="bg-white flex justify-between p-2 shadow-lg">
   <a class="text-lg font-bold text-gray-800" [routerLink]="['/']">{{ pageTitle }}</a>
   <ul class="flex space-x-4">
-    <li class="nav-item">
+    <li class="">
       <a class="text-gray-500 hover:text-blue-700" [routerLink]="['/welcome']" routerLinkActive="active">Home</a>
     </li>
-    <li class="nav-item">
+    <li class="">
       <a class="text-gray-500 hover:text-blue-700" [routerLink]="['/products']" routerLinkActive="active">
         Product List
       </a>
     </li>
-    <li class="nav-item relative">
-      <a class="text-gray-500 hover:text-blue-700" [routerLink]="['/cart']" routerLinkActive="active">
-        Cart
-        <span class="absolute top-0 right-0 bg-primary text-white p-1 rounded-full">
+    <li>
+      <a class="flex gap-2 text-gray-500 hover:text-blue-700" [routerLink]="['/cart']" routerLinkActive="active">
+        <span>
+          Cart
+        </span>
+        <span class="text-gray-800 p-1 rounded-full">
           {{ cartCount() > 0 ? cartCount() : '' }}
         </span>
       </a>
@@ -26,5 +28,5 @@
 </nav>
 
 <!-- <div class="flex mt-4"> -->
-  <router-outlet></router-outlet>
+<router-outlet></router-outlet>
 <!-- </div> -->

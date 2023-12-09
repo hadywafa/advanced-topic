@@ -1,14 +1,14 @@
 import { Component, Input, OnInit, computed, inject, signal } from "@angular/core";
 import { CartItem } from "../../../models/cart";
 import { CartService } from "../../../services/cart.service";
-import { CurrencyPipe, NgIf } from "@angular/common";
+import { CurrencyPipe, NgFor, NgIf } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 
 @Component({
   selector: "app-cart-item",
   templateUrl: "./cart-item.component.html",
   standalone: true,
-  imports: [FormsModule, NgIf, CurrencyPipe],
+  imports: [FormsModule, NgIf, NgFor, CurrencyPipe],
 })
 export class CartItemComponent implements OnInit {
   ngOnInit(): void {
